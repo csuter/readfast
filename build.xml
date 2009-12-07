@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project name='readfast' default='build'>
+
+
+    <target name='all' depends='build,package'>
+    </target>
+
+    <target name='build' depends='build-init'>
+        <javac srcdir='src' destdir='build/classes' debug='true' debuglevel='lines,source,vars'>
+		</javac>
+    </target>
+
+    <target name='build-init'>
+        <mkdir dir='build'/>
+        <mkdir dir='build/classes'/>
+        <mkdir dir='build/jar'/>
+    </target>
+
+    <target name='package'>
+        <jar basedir='build/classes' destfile='build/jar/readfast.jar'/>
+    </target>
+
+    <target name='clean'>
+        <delete dir='build'/>
+    </target>
+</project>
+
